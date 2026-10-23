@@ -504,7 +504,7 @@
             </li>
             <li>
               <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-              <div><small>Address<span class="ta">முகவரி</span></small><a data-link="maps" data-site="address" href="#" target="_blank" rel="noopener">Shop No., Street, Area, City, State – PIN</a></div>
+              <div><small>Address<span class="ta">முகவரி</span></small><a data-link="maps" data-site="address" href="#" target="_blank" rel="noopener">No. 112, Udangudi – Thisayanvilai Main Road, Opp. SSB College, Kommadikottai, Thoothukudi Dt., Tamil Nadu – 628653</a></div>
             </li>
             <li>
               <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
@@ -567,11 +567,12 @@
    ================================================================ */
 const SITE = {
   name:      "Anantha Agency",
-  city:      "",                       // e.g. "Karaikudi"; leave "" to hide
+  city:      "Kommadikottai",          // leave "" to hide
   phone:     "+91 94421 53475",        // shown on the page
   whatsapp:  "919442153475",           // country code + number, digits only
   email:     "kasianantham@yahoo.com",         // enquiries are sent here
-  address:   "Shop No., Street, Area, City, State – PIN",
+  address:   "No. 112, Udangudi – Thisayanvilai Main Road, Opp. SSB College, Kommadikottai, Thoothukudi Dt., Tamil Nadu – 628653",
+  mapQuery:  "Kommadikottai, Tamil Nadu 628653",   // what Google Maps searches for; make it more exact if the pin is off
   hours:     "Mon–Sat, 8 AM – 7 PM · Sunday closed",
   localTagline: "தரமான சிமெண்ட் · நியாயமான விலை · சரியான நேரத்தில் டெலிவரி", // or "" to hide
   replyTime: "24 hours",
@@ -593,10 +594,10 @@ const SITE = {
   const tel  = "tel:" + SITE.phone.replace(/[^\d+]/g, "");
   const wa   = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whatsappMessage)}`;
   const mail = "mailto:" + SITE.email;
-  const maps = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(SITE.address);
+  const maps = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(SITE.mapQuery || SITE.address);
   const hrefs = { tel, wa, mail, maps };
   $$("[data-link]").forEach(a => a.href = hrefs[a.dataset.link]);
-  $("#map").src = "https://www.google.com/maps?q=" + encodeURIComponent(SITE.address) + "&output=embed";
+  $("#map").src = "https://www.google.com/maps?q=" + encodeURIComponent(SITE.mapQuery || SITE.address) + "&output=embed";
 
   // Brands + extras
   if (!SITE.others) $("#also-line").remove();
