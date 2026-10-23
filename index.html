@@ -576,7 +576,8 @@ const SITE = {
   whatsapp:  "919442153475",           // country code + number, digits only
   email:     "kasianantham@yahoo.com",         // enquiries are sent here
   address:   "No. 112, Udangudi – Thisayanvilai Main Road, Opp. SSB College, Kommadikottai, Thoothukudi Dt., Tamil Nadu – 628653",
-  mapQuery:  "Kommadikottai, Tamil Nadu 628653",   // what Google Maps searches for; make it more exact if the pin is off
+  mapQuery:  "8.3709042,77.9522829",   // shop pin (lat,long) for the embedded map
+  mapLink:   "https://maps.app.goo.gl/cHN4r9sivXJnj3xd8",   // Google Maps listing opened from the address
   hours:     "Mon–Sat, 8 AM – 7 PM · Sunday closed",
   localTagline: "தரமான சிமெண்ட் · நியாயமான விலை · சரியான நேரத்தில் டெலிவரி", // or "" to hide
   replyTime: "24 hours",
@@ -598,10 +599,10 @@ const SITE = {
   const tel  = "tel:" + SITE.phone.replace(/[^\d+]/g, "");
   const wa   = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whatsappMessage)}`;
   const mail = "mailto:" + SITE.email;
-  const maps = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(SITE.mapQuery || SITE.address);
+  const maps = SITE.mapLink || "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(SITE.mapQuery || SITE.address);
   const hrefs = { tel, wa, mail, maps };
   $$("[data-link]").forEach(a => a.href = hrefs[a.dataset.link]);
-  $("#map").src = "https://www.google.com/maps?q=" + encodeURIComponent(SITE.mapQuery || SITE.address) + "&output=embed";
+  $("#map").src = "https://www.google.com/maps?q=" + encodeURIComponent(SITE.mapQuery || SITE.address) + "&z=16&output=embed";
 
   // Brands + extras
   if (!SITE.others) $("#also-line").remove();
