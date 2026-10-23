@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Your Store Name — Cement Dealer</title>
+<title>Anantha Agency: Cement Dealer</title>
 <meta name="description" content="Genuine cement from top brands. Bulk orders, timely delivery, fair prices.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&family=Noto+Sans+Devanagari:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&family=Noto+Sans+Tamil:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --charcoal: #1d1f22;
@@ -103,6 +103,11 @@
   .card { background: var(--white); border: 1px solid var(--line); display: flex; flex-direction: column; }
   .card-top { height: 6px; background: var(--charcoal); }
   .card:hover .card-top { background: var(--accent); }
+  .card-img { background: var(--offwhite); border-bottom: 1px solid var(--line); padding: 20px 0 8px; }
+  .card-img img { height: 200px; width: auto; margin: 0 auto; }
+  .grades { margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); border: 1px solid var(--line); background: var(--white); }
+  .grades div { padding: 16px 18px; font-size: 15px; color: var(--muted); border-bottom: 1px solid var(--line); }
+  .grades strong { display: block; font: 700 18px/1.2 var(--head); letter-spacing: .04em; color: var(--text); margin-bottom: 4px; }
   .card-body { padding: 24px 22px; display: flex; flex-direction: column; flex: 1; }
   .grade { display: inline-block; align-self: flex-start; font: 700 13px/1 var(--head); letter-spacing: .1em; padding: 6px 8px; background: var(--offwhite); border: 1px solid var(--line); margin-bottom: 14px; }
   .card h3 { font-size: 28px; margin-bottom: 8px; }
@@ -191,7 +196,7 @@
   .strip { background: #f5c400; color: var(--charcoal); font: 700 14px/1.3 var(--head); letter-spacing: .06em; text-transform: uppercase; }
   .strip .wrap { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 22px; padding-top: 8px; padding-bottom: 8px; text-align: center; }
   .strip span::before { content: "■"; color: var(--accent-dark); margin-right: 8px; font-size: 9px; vertical-align: 2px; }
-  .local { font-family: "Noto Sans Devanagari", var(--body); font-weight: 700; font-size: clamp(20px, 3.4vw, 28px); color: #f5c400; margin: 18px 0 0; line-height: 1.4; }
+  .local { font-family: "Noto Sans Tamil", var(--body); font-weight: 700; font-size: clamp(20px, 3.4vw, 28px); color: #f5c400; margin: 18px 0 0; line-height: 1.4; }
   .price { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; border-top: 1px dashed var(--line); padding: 12px 0 16px; font-size: 14px; color: var(--muted); }
   .price strong { font: 800 22px/1 var(--head); color: var(--text); }
   .pay { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px; }
@@ -223,7 +228,7 @@
       <span class="logo" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 21V9l9-6 9 6v12h-6v-7H9v7H3z"/></svg>
       </span>
-      <span class="brand-name" data-site="name">Your Store Name</span>
+      <span class="brand-name" data-site="name">Anantha Agency</span>
     </a>
     <nav class="nav" aria-label="Main">
       <a href="#products">Products</a>
@@ -252,13 +257,13 @@
   <section class="hero grain">
     <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow">Authorised Cement Dealer · <span data-site="city">Your City</span></p>
+        <p class="eyebrow">Authorised Cement Dealer<span id="city-sep"> · </span><span data-site="city"></span></p>
         <h1>
           <span>Quality Cement.</span>
           <span>Fair Prices.</span>
           <span class="hl">Reliable Supply.</span>
         </h1>
-        <p class="local" data-site="localTagline" lang="hi">भरोसेमंद सीमेंट, सही दाम, समय पर डिलीवरी</p>
+        <p class="local" data-site="localTagline" lang="ta">தரமான சிமெண்ட் · நியாயமான விலை · சரியான நேரத்தில் டெலிவரி</p>
         <p>Genuine 50 kg bags from India's trusted brands, delivered to your site on time, whether you need 10 bags or a full truck load.</p>
         <div class="hero-ctas">
           <a href="#enquiry" class="btn btn-accent">Get a Quote</a>
@@ -268,7 +273,7 @@
           </a>
         </div>
         <div class="hero-stats">
-          <div><strong>50 kg</strong><span>Sealed Bags</span></div>
+          <div><strong>3</strong><span>Top Brands</span></div>
           <div><strong>ISI</strong><span>Marked Stock</span></div>
           <div><strong>GST</strong><span>Bill Provided</span></div>
         </div>
@@ -287,50 +292,52 @@
   <section class="section products" id="products">
     <div class="wrap">
       <p class="eyebrow">Products</p>
-      <h2 class="section-title">Cement for every job</h2>
+      <h2 class="section-title">Brands we stock</h2>
       <p class="section-lead">Fresh, ISI-marked stock in every grade. Cement rates move with the market, so ask us for today's price per bag. No obligation.</p>
 
       <div class="cards">
         <article class="card">
           <div class="card-top"></div>
+          <div class="card-img"><img src="images/chettinad.svg" alt="Chettinad cement bag" width="300" height="380" loading="lazy"></div>
           <div class="card-body">
-            <span class="grade">OPC 53 GRADE · IS 269</span>
-            <h3>High Strength</h3>
-            <p>Ordinary Portland Cement with fast early strength. Ideal where quick de-shuttering and heavy loads matter.</p>
-            <ul class="uses"><li>RCC slabs</li><li>Columns &amp; beams</li><li>Precast</li></ul>
-            <a href="#enquiry" class="btn btn-dark" data-product="OPC 53 Grade">Request Price</a>
+            <span class="grade">50 KG BAG · ISI MARKED</span>
+            <h3>Chettinad Cement</h3>
+            <p>A trusted South Indian brand, known for consistent quality and good finish on plaster and masonry.</p>
+            <ul class="uses"><li>OPC 53</li><li>PPC</li></ul>
+            <a href="#enquiry" class="btn btn-dark" data-product="Chettinad Cement">Request Price</a>
           </div>
         </article>
-
         <article class="card">
           <div class="card-top"></div>
+          <div class="card-img"><img src="images/adani.svg" alt="Adani cement bag" width="300" height="380" loading="lazy"></div>
           <div class="card-body">
-            <span class="grade">OPC 43 GRADE · IS 269</span>
-            <h3>General Purpose</h3>
-            <p>A dependable all-rounder for everyday construction, with steady strength gain and good workability.</p>
-            <ul class="uses"><li>Plastering</li><li>Masonry</li><li>Flooring</li></ul>
-            <a href="#enquiry" class="btn btn-dark" data-product="OPC 43 Grade">Request Price</a>
+            <span class="grade">50 KG BAG · ISI MARKED</span>
+            <h3>Adani Cement</h3>
+            <p>Strong, reliable cement for homes and larger projects, with steady supply.</p>
+            <ul class="uses"><li>OPC 53</li><li>PPC</li></ul>
+            <a href="#enquiry" class="btn btn-dark" data-product="Adani Cement">Request Price</a>
           </div>
         </article>
-
         <article class="card">
           <div class="card-top"></div>
+          <div class="card-img"><img src="images/ultratech.svg" alt="UltraTech cement bag" width="300" height="380" loading="lazy"></div>
           <div class="card-body">
-            <span class="grade">PPC · IS 1489</span>
-            <h3>Portland Pozzolana</h3>
-            <p>Durable, crack-resistant and better against moisture. The popular choice for homes and long-life structures.</p>
-            <ul class="uses"><li>Residential</li><li>Foundations</li><li>Water tanks</li></ul>
-            <a href="#enquiry" class="btn btn-dark" data-product="PPC">Request Price</a>
+            <span class="grade">50 KG BAG · ISI MARKED</span>
+            <h3>UltraTech Cement</h3>
+            <p>India's largest cement brand, a popular choice for RCC work, slabs and foundations.</p>
+            <ul class="uses"><li>OPC 53</li><li>OPC 43</li><li>PPC</li></ul>
+            <a href="#enquiry" class="btn btn-dark" data-product="UltraTech Cement">Request Price</a>
           </div>
         </article>
       </div>
 
-      <div class="brands">
-        <span class="brands-label">Brands we stock</span>
-        <!-- Filled from SITE.brands -->
-        <span id="brand-list" style="display:contents"></span>
+      <div class="grades">
+        <div><strong>OPC 53 · IS 269</strong>High early strength: RCC slabs, columns, beams.</div>
+        <div><strong>OPC 43 · IS 269</strong>General purpose: plastering, masonry, flooring.</div>
+        <div><strong>PPC · IS 1489</strong>Durable &amp; moisture resistant: homes, foundations, tanks.</div>
       </div>
-      <p class="also" id="also-line">Also available: <strong data-site="others">River sand, M-sand, TMT steel, Red bricks</strong></p>
+      <p class="also" style="margin-top:12px">Grade availability varies by brand. Ask us for today's stock.</p>
+      <p class="also" id="also-line" hidden>Also available: <strong data-site="others">River sand, M-sand, TMT steel, Red bricks</strong></p>
       <div class="pay" aria-label="Payment options">
         <span>Pay on delivery</span><span>Cash</span><span>UPI</span><span>Bank transfer (NEFT/RTGS)</span><span>GST invoice</span>
       </div>
@@ -412,10 +419,10 @@
               <label for="f-product">Product needed <span class="req">*</span></label>
               <select id="f-product" name="product" required>
                 <option value="">Select…</option>
-                <option>OPC 53 Grade</option>
-                <option>OPC 43 Grade</option>
-                <option>PPC</option>
-                <option>Other / Not sure</option>
+                <option>Chettinad Cement</option>
+                <option>Adani Cement</option>
+                <option>UltraTech Cement</option>
+                <option>Not sure / Suggest one</option>
               </select>
             </div>
             <div class="field">
@@ -438,7 +445,7 @@
 
           <div class="field">
             <label for="f-msg">Message</label>
-            <textarea id="f-msg" name="message" placeholder="Preferred brand, delivery date, anything else…"></textarea>
+            <textarea id="f-msg" name="message" placeholder="Grade (OPC 53 / OPC 43 / PPC), delivery date, anything else…"></textarea>
           </div>
 
           <div class="form-foot">
@@ -469,11 +476,11 @@
           <ul class="info-list">
             <li>
               <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z"/></svg></span>
-              <div><small>Phone</small><a data-link="tel" data-site="phone" href="tel:">+91 00000 00000</a></div>
+              <div><small>Phone</small><a data-link="tel" data-site="phone" href="tel:">+91 94421 53475</a></div>
             </li>
             <li>
               <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18v14H3z"/><path d="M3 6l9 7 9-7"/></svg></span>
-              <div><small>Email</small><a data-link="mail" data-site="email" href="mailto:">your@email.com</a></div>
+              <div><small>Email</small><a data-link="mail" data-site="email" href="mailto:">kasianantham@yahoo.com</a></div>
             </li>
             <li>
               <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
@@ -503,7 +510,7 @@
       <div>
         <a href="#top" class="brand">
           <span class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 21V9l9-6 9 6v12h-6v-7H9v7H3z"/></svg></span>
-          <span class="brand-name" data-site="name">Your Store Name</span>
+          <span class="brand-name" data-site="name">Anantha Agency</span>
         </a>
         <p>Quality cement, fair prices and reliable supply for builders and homeowners.</p>
       </div>
@@ -519,13 +526,13 @@
       <div>
         <h4>Reach us</h4>
         <ul>
-          <li><a data-link="tel" data-site="phone" href="tel:">+91 00000 00000</a></li>
-          <li><a data-link="mail" data-site="email" href="mailto:">your@email.com</a></li>
+          <li><a data-link="tel" data-site="phone" href="tel:">+91 94421 53475</a></li>
+          <li><a data-link="mail" data-site="email" href="mailto:">kasianantham@yahoo.com</a></li>
           <li data-site="hours">Mon–Sat, 8 AM – 7 PM</li>
         </ul>
       </div>
     </div>
-    <div class="copy">© <span id="year"></span> <span data-site="name">Your Store Name</span>. All rights reserved.</div>
+    <div class="copy">© <span id="year"></span> <span data-site="name">Anantha Agency</span>. All rights reserved.</div>
   </div>
 </footer>
 
@@ -538,17 +545,16 @@
    YOUR BUSINESS DETAILS: edit these, then save.
    ================================================================ */
 const SITE = {
-  name:      "Your Store Name",
-  city:      "Your City",
-  phone:     "+91 00000 00000",        // shown on the page
-  whatsapp:  "910000000000",           // country code + number, digits only
-  email:     "your@email.com",         // enquiries are sent here
+  name:      "Anantha Agency",
+  city:      "",                       // e.g. "Karaikudi"; leave "" to hide
+  phone:     "+91 94421 53475",        // shown on the page
+  whatsapp:  "919442153475",           // country code + number, digits only
+  email:     "kasianantham@yahoo.com",         // enquiries are sent here
   address:   "Shop No., Street, Area, City, State – PIN",
   hours:     "Mon–Sat, 8 AM – 7 PM · Sunday closed",
-  localTagline: "भरोसेमंद सीमेंट, सही दाम, समय पर डिलीवरी", // swap for Tamil/Telugu/Kannada etc., or "" to hide
+  localTagline: "தரமான சிமெண்ட் · நியாயமான விலை · சரியான நேரத்தில் டெலிவரி", // or "" to hide
   replyTime: "24 hours",
-  brands:    ["UltraTech", "Ramco", "Dalmia", "ACC"],
-  others:    "River sand, M-sand, TMT steel, Red bricks",    // set to "" to hide the "Also available" line
+  others:    "",    // set to "" to hide the "Also available" line
   whatsappMessage: "Namaste, I'd like to know today's cement rate per bag."
 };
 /* ================================================================ */
@@ -559,7 +565,7 @@ const SITE = {
 
   // Fill text placeholders
   $$("[data-site]").forEach(el => { if (SITE[el.dataset.site] != null) el.textContent = SITE[el.dataset.site]; });
-  document.title = `${SITE.name}: Cement Dealer in ${SITE.city}`;
+  document.title = `${SITE.name}: Cement Dealer${SITE.city ? " in " + SITE.city : ""}`;
   $("#year").textContent = new Date().getFullYear();
 
   // Links
@@ -572,9 +578,8 @@ const SITE = {
   $("#map").src = "https://www.google.com/maps?q=" + encodeURIComponent(SITE.address) + "&output=embed";
 
   // Brands + extras
-  $("#brand-list").innerHTML = SITE.brands.map(b => `<span class="brand-chip"></span>`).join("");
-  $$("#brand-list .brand-chip").forEach((el, i) => el.textContent = SITE.brands[i]);
   if (!SITE.others) $("#also-line").remove();
+  if (!SITE.city) $("#city-sep").remove();
   if (!SITE.localTagline) $(".local").remove();
 
   // "Request Price" pre-selects the product in the form
